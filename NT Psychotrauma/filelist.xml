@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="NT Psychotrauma" modversion="0.1.0" corepackage="False" gameversion="1.14.5.0">
+
+  <Other file="%ModDir%/Lua/Autorun/init.lua"/>
+  <Other file="%ModDir%/Lua/Scripts/test.lua"/>
+
+</contentpackage>

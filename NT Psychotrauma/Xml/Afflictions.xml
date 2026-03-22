@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Afflictions>
+
+    <!-- Psychological Trauma
+    Causes psychotic episodes, depression, etc
+    Visible on health scanner at 20% when symptoms start to occur
+    Visible as an affliction at 60%
+    Can be suppressed short term with psychological trauma suppression
+    Can be decreased long term by therapeutic experiences -->
+    <Affliction
+      name=""
+      identifier="psychotrauma"
+      description=""
+      isbuff="false"
+      targets="human"
+      healableinmedicalclinic="false"
+      limbspecific="false"
+      indicatorlimb="Head"
+      activationthreshold="0"
+      showinhealthscannerthreshold="200"
+      showiconthreshold="600"
+      maxstrength="1000">
+    </Affliction>
+
+    <!-- Psychological Trauma Suppresion
+    Reduces the effects of psychological trauma, does not decrease its strength
+    Visible as an affliction
+    Induced mainly by drugs such as antidepressants 
+    Causes side effects such as dependence and addiction -->
+    <Affliction
+      name=""
+      identifier="psychotrauma_suppression"
+      description=""
+      isbuff="true"
+      targets="human"
+      healableinmedicalclinic="false"
+      limbspecific="false"
+      indicatorlimb="Head"
+      activationthreshold="0"
+      showinhealthscannerthreshold="1"
+      showiconthreshold="1"
+      maxstrength="900">
+    </Affliction>
+
+    <!-- Therapeutic Experience
+    Long term solution to psychological trauma
+    Not visible
+    Induced by distracting activities such as:
+    * playing/listening to music
+    * being near living crewmates
+    * interacting with plants
+    side effects include having a good time 
+    has a weaker effect the higher your overall psych trauma -->
+    <Affliction
+      name=""
+      identifier="therapy"
+      description=""
+      isbuff="true"
+      targets="human"
+      healableinmedicalclinic="false"
+      limbspecific="false"
+      activationthreshold="0"
+      showinhealthscannerthreshold="10000"
+      showiconthreshold="10000"
+      maxstrength="100">
+
+      <Effect minstrength="99" maxstrength="100" 
+        strengthchange="0.1">
+        <StatusEffect target="Character" disabledeltatime="true">
+          <ReduceAffliction identifier="psychotrauma" amount="2"/>
+          <ReduceAffliction identifier="therapy" amount="1000"/>
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+
+    <!-- Cravings, addictions, and withdrawals -->
+    <!-- Antidepressants are a quick remedy to psychological trauma but leave an impact on the user -->
+
+    <!-- Antidepressant craving
+    Indication of incoming withdrawal
+    Not harmless by itself
+    Visible as an affliction -->
+    <Affliction
+      name=""
+      identifier="antidepressant_craving"
+      description=""
+      isbuff="false"
+      targets="human"
+      healableinmedicalclinic="false"
+      limbspecific="false"
+      indicatorlimb="Head"
+      activationthreshold="0"
+      showinhealthscannerthreshold="1"
+      showiconthreshold="10"
+      maxstrength="50">
+    </Affliction>
+
+    <!-- Desensitisations -->
+    <!-- After experiencing a certain amount of traumatic events, your character becomes desensitised to those events -->
+
+    <!-- Necrotic Desensitisation
+    Desensitisation to seeing dead humans
+    Not visible
+    The higher this is, the less your psych trauma increases for seeing each dead body -->
+    <Affliction
+      name=""
+      identifier="necro_desense"
+      description=""
+      isbuff="true"
+      targets="human"
+      healableinmedicalclinic="false"
+      limbspecific="false"
+      indicatorlimb="Head"
+      activationthreshold="0"
+      showinhealthscannerthreshold="10000"
+      showiconthreshold="10000"
+      maxstrength="100">
+    </Affliction>
+
+
+    <!-- Injury Desensitisation
+    Desensitisation to being hurt
+    Not visible
+    The higher this is, the less your psych trauma increases every time you are hurt
+    Does not increase while unconscious nor while under analgesia -->
+    <Affliction
+      name=""
+      identifier="injury_desense"
+      description=""
+      isbuff="true"
+      targets="human"
+      healableinmedicalclinic="false"
+      limbspecific="false"
+      indicatorlimb="Head"
+      activationthreshold="0"
+      showinhealthscannerthreshold="10000"
+      showiconthreshold="10000"
+      maxstrength="100">
+    </Affliction>
+
+    <!-- Danger Desensitisation
+    Desensitisation to being in dangerous situations (i.e. submarine takes damage)
+    Not visible
+    The higher this is, the less your psych trauma increases each time your submarine takes damage -->
+    <Affliction
+      name=""
+      identifier="danger_desense"
+      description=""
+      isbuff="true"
+      targets="human"
+      healableinmedicalclinic="false"
+      limbspecific="false"
+      indicatorlimb="Head"
+      activationthreshold="0"
+      showinhealthscannerthreshold="10000"
+      showiconthreshold="10000"
+      maxstrength="100">
+    </Affliction>
+
+  </Afflictions>
+</Override>
